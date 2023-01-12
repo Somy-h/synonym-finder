@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-input {
+    background: none;
+    background-color: white;
+
+    font-size: 18px;
+    padding: 1rem 2rem 1rem 2rem;
+    display: block;
+    width: 60%;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+
+    margin: 25px 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .dic-container {
+    // display: flex;
+    // justify-content: center;
+    padding: 2rem;
+  }
+
+  .result-container {
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+    gap: 1rem 2rem;
+    width: 90%;
+  }
+}
