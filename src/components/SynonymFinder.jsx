@@ -24,6 +24,10 @@ const SynonymFinder = () => {
     }
   };
 
+  const handleInputField = (event) => {
+    setQueryWord(event.target.value);
+  };
+
   const handleSearchSynonym = async () => {
     setQueryWord(inputWordRef.current.value);
     refetch();
@@ -53,12 +57,15 @@ const SynonymFinder = () => {
         placeholder='...enter a word'
         name='queryWord'
         ref={inputWordRef}
+        onChange={handleInputField}
         onKeyDown={handleKeyDown}
       />
       <Button isLoading={isRefetching} onClick={handleSearchSynonym}>
         Search Synonym
       </Button>
-      <div className='dic-container'>{wordMeaningData?.data[0]?.defs[0]}</div>
+      <div className='dic-container'>
+        {wordMeaningData?.data && wordMeaningData?.data[0]?.defs[0]}
+      </div>
 
       <div className='result-container'>{synonymWords}</div>
     </div>
